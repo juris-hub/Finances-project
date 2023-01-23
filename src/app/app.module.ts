@@ -15,6 +15,11 @@ import { MainComponent } from './dashboard/main/main.component';
 import { TableModule } from 'primeng/table';
 import { AddTransactionComponent } from './transactions/add-transaction/add-transaction.component';
 import { EditTransactionComponent } from './transactions/edit-transaction/edit-transaction.component';
+import { CalendarModule } from 'primeng/calendar';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { DropdownModule } from 'primeng/dropdown';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,6 +40,11 @@ import { EditTransactionComponent } from './transactions/edit-transaction/edit-t
     ButtonModule,
     BrowserAnimationsModule,
     TableModule,
+    CalendarModule,
+    InputTextModule,
+    InputNumberModule,
+    DropdownModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
