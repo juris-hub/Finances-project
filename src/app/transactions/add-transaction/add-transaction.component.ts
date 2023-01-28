@@ -25,7 +25,11 @@ export class AddTransactionComponent implements OnInit {
   }
 
   onSubmit() {
-    this.dashboardService.transactions.push(this.transactionForm.getRawValue());
-    console.log(this.transactionForm.value);
+    if (this.transactionForm.valid) {
+      this.dashboardService.transactions.push(
+        this.transactionForm.getRawValue()
+      );
+      console.log(this.transactionForm.value);
+    }
   }
 }
