@@ -6,13 +6,13 @@ export class User {
   userId: number;
   profileInformation: ProfileInformation;
   financialInformation: FinancialInformation;
-  transactionData: Transactions[];
+  transactionData?: Transactions[];
 
   constructor(
     userId: number,
     profileInformation: ProfileInformation,
     financialInformation: FinancialInformation,
-    transactions: Transactions[]
+    transactions?: Transactions[]
   ) {
     this.userId = userId;
     this.profileInformation = profileInformation;

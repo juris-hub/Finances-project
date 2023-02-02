@@ -18,6 +18,7 @@ const routes: Routes = [
     children: [
       { path: 'personal', component: PersonalInformationComponent },
       { path: 'financial', component: FinancialInformationComponent },
+      // { path: 'complete', component: FinancialInformationComponent },
     ],
   },
   {

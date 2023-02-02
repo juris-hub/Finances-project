@@ -24,8 +24,8 @@ export class RegisterComponent implements OnInit {
         routerLink: 'financial',
       },
       {
-        label: 'Transaction',
-        routerLink: 'transaction',
+        label: 'Complete',
+        routerLink: 'complete',
       },
     ];
   }

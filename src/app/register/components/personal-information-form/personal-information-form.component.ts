@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-personal-information-form',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
 export class PersonalInformationFormComponent implements OnInit {
   personalInfoForm!: FormGroup;
 
-  constructor(private router: Router) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
     this.personalInfoForm = new FormGroup({
@@ -23,6 +24,9 @@ export class PersonalInformationFormComponent implements OnInit {
 
   onNext() {
     console.log(this.personalInfoForm);
+
+    this.userService.profileInformation = this.personalInfoForm.value;
+    console.log(this.userService.profileInformation);
     this.router.navigate(['register/financial']);
   }
 }

@@ -26,6 +26,7 @@ import { StepsModule } from 'primeng/steps';
 import { PersonalInformationFormComponent } from './register/components/personal-information-form/personal-information-form.component';
 import { PersonalInformationComponent } from './register/pages/personal-information/personal-information.component';
 import { FinancialInformationComponent } from './register/pages/financial-information/financial-information.component';
+import { FinancialInformationFormComponent } from './register/components/financial-information-form/financial-information-form.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { FinancialInformationComponent } from './register/pages/financial-inform
     PersonalInformationFormComponent,
     PersonalInformationComponent,
     FinancialInformationComponent,
+    FinancialInformationFormComponent,
   ],
   imports: [
     BrowserModule,

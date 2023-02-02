@@ -1,0 +1,28 @@
+<div class="container">
+  <form class="form" [formGroup]="financialInfoForm">
+    <div class="form-row">
+      <label class="form-label">Monthly income</label>
+      <div class="form-item">
+        <p-inputNumber  mode="currency" currency="EUR" formControlName="income" />
+      </div>
+    </div>
+    <div class="form-row">
+      <label class="form-label">Net worth</label>
+      <div class="form-item">
+        <p-inputNumber  mode="currency" currency="EUR" formControlName="netWorth" />
+      </div>
+    </div>
+
+    <div class="form-row-actions">
+      <button (click)="onBack()" pButton>Back</button>
+      <button
+        type="submit"
+        pButton
+        [disabled]="!financialInfoForm.valid"
+        (click)="onNext()"
+      >
+        Next
+      </button>
+    </div>
+  </form>
+</div>

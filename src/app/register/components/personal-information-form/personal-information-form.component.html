@@ -25,7 +25,14 @@
       </div>
     </div>
     <div class="form-row-actions">
-      <button type="submit" pButton (click)="onNext()">Next</button>
+      <button
+        type="submit"
+        pButton
+        [disabled]="!personalInfoForm.valid"
+        (click)="onNext()"
+      >
+        Next
+      </button>
     </div>
   </form>
 </div>
