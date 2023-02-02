@@ -1,6 +1,6 @@
 // import { Category } from './category.model';
 
-export class Transaction {
+export class Transactions {
   name: string;
   timestamp: Date;
   amount: number;

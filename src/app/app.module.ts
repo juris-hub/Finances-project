@@ -20,6 +20,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { DropdownModule } from 'primeng/dropdown';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
+import { RegisterFormComponent } from './register/components/register-form/register-form.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MainComponent,
     AddTransactionComponent,
     EditTransactionComponent,
+    RegisterComponent,
+    RegisterFormComponent,
   ],
   imports: [
     BrowserModule,

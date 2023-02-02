@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from 'src/app/core/dashboard.service';
-import { Transaction } from 'src/app/core/transaction.model';
+import { Transactions } from 'src/app/core/transactions.model';
 
 @Component({
   selector: 'app-main',
@@ -8,7 +8,7 @@ import { Transaction } from 'src/app/core/transaction.model';
   styleUrls: ['./main.component.css'],
 })
 export class MainComponent implements OnInit {
-  transactions: Transaction[] = [];
+  transactions: Transactions[] = [];
 
   constructor(private dashboardService: DashboardService) {}
 
