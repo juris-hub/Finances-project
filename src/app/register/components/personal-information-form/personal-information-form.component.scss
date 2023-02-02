@@ -4,6 +4,7 @@
   border-radius: 10px;
   background-color: #404950;
   padding: 1em;
+  width: fit-content;
 }
 .form{
   display: flex;
@@ -15,6 +16,14 @@
   gap:1em;
   min-height: 2.5em;
   margin-bottom: 1em;
+}
+
+.form-row-actions{
+  display: flex;
+  gap: 1em;
+  min-height: 2.5em;
+  margin-bottom: 1em;
+  margin-left: 32.3em;
 }
 
 .form-label{
@@ -36,3 +45,4 @@
 input.p-inputtext {
   background: #403c3c;
 }
+

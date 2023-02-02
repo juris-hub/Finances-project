@@ -4,6 +4,8 @@ import { AddTransactionComponent } from './transactions/add-transaction/add-tran
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditTransactionComponent } from './transactions/edit-transaction/edit-transaction.component';
 import { RegisterComponent } from './register/register.component';
+import { PersonalInformationComponent } from './register/pages/personal-information/personal-information.component';
+import { FinancialInformationComponent } from './register/pages/financial-information/financial-information.component';
 
 const routes: Routes = [
   {
@@ -13,6 +15,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
+    children: [
+      { path: 'personal', component: PersonalInformationComponent },
+      { path: 'financial', component: FinancialInformationComponent },
+    ],
   },
   {
     path: 'new-transaction',

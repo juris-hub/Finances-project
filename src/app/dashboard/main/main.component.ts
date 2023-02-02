@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DashboardService } from 'src/app/core/dashboard.service';
+import { DashboardService } from 'src/app/services/dashboard.service';
 import { Transactions } from 'src/app/core/transactions.model';
 
 @Component({

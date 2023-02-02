@@ -1,0 +1,31 @@
+<div class="container">
+  <form class="form" [formGroup]="personalInfoForm">
+    <div class="form-row">
+      <label class="form-label">First Name</label>
+      <div class="form-item">
+        <input type="text" pInputText formControlName="name" />
+      </div>
+    </div>
+    <div class="form-row">
+      <label class="form-label">Last Name</label>
+      <div class="form-item">
+        <input type="text" pInputText formControlName="lastName" />
+      </div>
+    </div>
+    <div class="form-row">
+      <label class="form-label">E-mail</label>
+      <div class="form-item">
+        <input type="text" pInputText formControlName="email" />
+      </div>
+    </div>
+    <div class="form-row">
+      <label class="form-label">Password</label>
+      <div class="form-item">
+        <input type="text" pInputText formControlName="password" />
+      </div>
+    </div>
+    <div class="form-row-actions">
+      <button type="submit" pButton (click)="onNext()">Next</button>
+    </div>
+  </form>
+</div>

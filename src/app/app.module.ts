@@ -22,6 +22,10 @@ import { DropdownModule } from 'primeng/dropdown';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { RegisterFormComponent } from './register/components/register-form/register-form.component';
+import { StepsModule } from 'primeng/steps';
+import { PersonalInformationFormComponent } from './register/components/personal-information-form/personal-information-form.component';
+import { PersonalInformationComponent } from './register/pages/personal-information/personal-information.component';
+import { FinancialInformationComponent } from './register/pages/financial-information/financial-information.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +41,9 @@ import { RegisterFormComponent } from './register/components/register-form/regis
     EditTransactionComponent,
     RegisterComponent,
     RegisterFormComponent,
+    PersonalInformationFormComponent,
+    PersonalInformationComponent,
+    FinancialInformationComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +56,7 @@ import { RegisterFormComponent } from './register/components/register-form/regis
     InputNumberModule,
     DropdownModule,
     ReactiveFormsModule,
+    StepsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
