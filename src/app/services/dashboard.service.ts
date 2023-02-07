@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Transactions } from '../core/transactions.model';
+import { User } from '../core/user.model';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root',
@@ -10,9 +12,20 @@ export class DashboardService {
     new Transactions('Kod kiće', new Date('12.01.2023'), 0.6, 'izlazak', 2),
   ];
 
-  constructor() {}
+  user!: User;
+
+  constructor(private userService: UserService) {}
 
   getTransactions() {
     return this.transactions.slice();
+  }
+
+  getUserData() {
+    this.user = {
+      profileInformation: this.userService.getProfileInformation(),
+      financialInformation: this.userService.getFinancialInformation(),
+      userId: 1,
+      transactionData: this.transactions,
+    };
   }
 }

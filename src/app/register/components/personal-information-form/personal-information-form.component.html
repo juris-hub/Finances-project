@@ -1,5 +1,5 @@
 <div class="container">
-  <form class="form" [formGroup]="personalInfoForm">
+  <form class="form" [formGroup]="personalInfoForm" (ngSubmit)="onNext()">
     <div class="form-row">
       <label class="form-label">First Name</label>
       <div class="form-item">
@@ -21,16 +21,25 @@
     <div class="form-row">
       <label class="form-label">Password</label>
       <div class="form-item">
-        <input type="text" pInputText formControlName="password" />
+        <p-password formControlName="password" [toggleMask]="true">
+          <ng-template pTemplate="header">
+            <h6>Password strength</h6>
+          </ng-template>
+          <ng-template pTemplate="footer">
+            <p-divider></p-divider>
+            <p>Suggestions</p>
+            <ul>
+              <li>At least one lowercase</li>
+              <li>At least one uppercase</li>
+              <li>At least one number</li>
+              <li>Minimum 8 characters</li>
+            </ul>
+          </ng-template>
+        </p-password>
       </div>
     </div>
     <div class="form-row-actions">
-      <button
-        type="submit"
-        pButton
-        [disabled]="!personalInfoForm.valid"
-        (click)="onNext()"
-      >
+      <button type="submit" pButton [disabled]="!personalInfoForm.valid">
         Next
       </button>
     </div>

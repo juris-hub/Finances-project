@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-financial-information-form',
@@ -10,18 +11,23 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class FinancialInformationFormComponent implements OnInit {
   financialInfoForm!: FormGroup;
 
-  constructor(private router: Router, private route: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private userService: UserService
+  ) {}
 
   ngOnInit(): void {
     this.financialInfoForm = new FormGroup({
-      income: new FormControl(),
-      netWorth: new FormControl(),
+      income: new FormControl(null, [Validators.required, Validators.min(1)]),
+      netWorth: new FormControl(null, [Validators.required, Validators.min(1)]),
     });
   }
 
   onNext() {
     console.log(this.financialInfoForm);
-    this.router.navigate(['register/complete']);
+    this.userService.financialInformation = this.financialInfoForm.value;
+    this.router.navigate(['']);
   }
 
   onBack() {

@@ -27,6 +27,8 @@ import { PersonalInformationFormComponent } from './register/components/personal
 import { PersonalInformationComponent } from './register/pages/personal-information/personal-information.component';
 import { FinancialInformationComponent } from './register/pages/financial-information/financial-information.component';
 import { FinancialInformationFormComponent } from './register/components/financial-information-form/financial-information-form.component';
+import { PasswordModule } from 'primeng/password';
+import { DividerModule } from 'primeng/divider';
 
 @NgModule({
   declarations: [
@@ -59,6 +61,8 @@ import { FinancialInformationFormComponent } from './register/components/financi
     DropdownModule,
     ReactiveFormsModule,
     StepsModule,
+    PasswordModule,
+    DividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

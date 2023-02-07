@@ -35,14 +35,15 @@
 }
 
 .form-item{
-  width: 22em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-right: 5em;
 }
 
-input.p-inputtext {
-  background: #403c3c;
+::ng-deep.p-inputtext{
+  background: #403c3c ;
+  width:22em;
 }
+
 

@@ -23,10 +23,10 @@ export class RegisterComponent implements OnInit {
         label: 'Financial',
         routerLink: 'financial',
       },
-      {
-        label: 'Complete',
-        routerLink: 'complete',
-      },
+      // {
+      //   label: 'Complete',
+      //   routerLink: 'complete',
+      // },
     ];
   }
 }
