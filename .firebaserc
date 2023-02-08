@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "finances-8d82d": {
+      "hosting": {
+        "Finances-project": [
+          "finances-8d82d"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "finances-8d82d"
+  }
+}

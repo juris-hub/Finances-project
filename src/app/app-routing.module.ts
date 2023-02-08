@@ -6,15 +6,17 @@ import { EditTransactionComponent } from './transactions/edit-transaction/edit-t
 import { RegisterComponent } from './register/register.component';
 import { PersonalInformationComponent } from './register/pages/personal-information/personal-information.component';
 import { FinancialInformationComponent } from './register/pages/financial-information/financial-information.component';
+import { StepsComponent } from './register/pages/steps/steps.component';
 
 const routes: Routes = [
   {
     path: '',
     component: DashboardComponent,
   },
+  { path: 'register', component: RegisterComponent },
   {
-    path: 'register',
-    component: RegisterComponent,
+    path: 'steps',
+    component: StepsComponent,
     children: [
       { path: 'personal', component: PersonalInformationComponent },
       { path: 'financial', component: FinancialInformationComponent },

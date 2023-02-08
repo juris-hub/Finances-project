@@ -21,7 +21,6 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { DropdownModule } from 'primeng/dropdown';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
-import { RegisterFormComponent } from './register/components/register-form/register-form.component';
 import { StepsModule } from 'primeng/steps';
 import { PersonalInformationFormComponent } from './register/components/personal-information-form/personal-information-form.component';
 import { PersonalInformationComponent } from './register/pages/personal-information/personal-information.component';
@@ -29,6 +28,10 @@ import { FinancialInformationComponent } from './register/pages/financial-inform
 import { FinancialInformationFormComponent } from './register/components/financial-information-form/financial-information-form.component';
 import { PasswordModule } from 'primeng/password';
 import { DividerModule } from 'primeng/divider';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from './environments/environment';
+import { StepsComponent } from './register/pages/steps/steps.component';
+import { RegisterFormComponent } from './register/components/register-form/register-form.component';
 
 @NgModule({
   declarations: [
@@ -43,11 +46,13 @@ import { DividerModule } from 'primeng/divider';
     AddTransactionComponent,
     EditTransactionComponent,
     RegisterComponent,
-    RegisterFormComponent,
     PersonalInformationFormComponent,
     PersonalInformationComponent,
     FinancialInformationComponent,
     FinancialInformationFormComponent,
+    StepsComponent,
+    RegisterComponent,
+    RegisterFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +68,7 @@ import { DividerModule } from 'primeng/divider';
     StepsModule,
     PasswordModule,
     DividerModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [],
   bootstrap: [AppComponent],

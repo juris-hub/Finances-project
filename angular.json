@@ -6,8 +6,7 @@
     "Finances-project": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:component":
-        {
+        "@schematics/angular:component": {
           "style": "scss"
         }
       },
@@ -98,6 +97,16 @@
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "Finances-project:build:production",
+            "firebaseProject": "finances-8d82d",
+            "firebaseHostingSite": "finances-8d82d"
           }
         }
       }

@@ -1,0 +1,50 @@
+.container{
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: #404950;
+  padding: 1em;
+  width: fit-content;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row{
+  display: flex;
+  gap:1em;
+  min-height: 2.5em;
+  margin-bottom: 1em;
+}
+
+.form-label{
+  width: 14em;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.form-item{
+  width: 22em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 5em;
+}
+
+::ng-deep.p-inputtext{
+  background-color: #403c3c;
+  width:22em;
+
+}
+
+.form-row-actions{
+  display: flex;
+  gap: 1em;
+  min-height: 2.5em;
+  margin-bottom: 1em;
+  margin-left: 32.3em;
+}

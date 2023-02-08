@@ -12,33 +12,10 @@
         <input type="text" pInputText formControlName="lastName" />
       </div>
     </div>
-    <div class="form-row">
-      <label class="form-label">E-mail</label>
-      <div class="form-item">
-        <input type="text" pInputText formControlName="email" />
-      </div>
-    </div>
-    <div class="form-row">
-      <label class="form-label">Password</label>
-      <div class="form-item">
-        <p-password formControlName="password" [toggleMask]="true">
-          <ng-template pTemplate="header">
-            <h6>Password strength</h6>
-          </ng-template>
-          <ng-template pTemplate="footer">
-            <p-divider></p-divider>
-            <p>Suggestions</p>
-            <ul>
-              <li>At least one lowercase</li>
-              <li>At least one uppercase</li>
-              <li>At least one number</li>
-              <li>Minimum 8 characters</li>
-            </ul>
-          </ng-template>
-        </p-password>
-      </div>
-    </div>
+
     <div class="form-row-actions">
+      <button (click)="onBack()" pButton>Back</button>
+
       <button type="submit" pButton [disabled]="!personalInfoForm.valid">
         Next
       </button>

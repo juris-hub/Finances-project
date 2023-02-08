@@ -20,12 +20,5 @@ export class DashboardService {
     return this.transactions.slice();
   }
 
-  getUserData() {
-    this.user = {
-      profileInformation: this.userService.getProfileInformation(),
-      financialInformation: this.userService.getFinancialInformation(),
-      userId: 1,
-      transactionData: this.transactions,
-    };
-  }
+  getUserData() {}
 }
