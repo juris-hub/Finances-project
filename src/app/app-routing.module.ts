@@ -3,26 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddTransactionComponent } from './transactions/add-transaction/add-transaction.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditTransactionComponent } from './transactions/edit-transaction/edit-transaction.component';
-import { RegisterComponent } from './register/register.component';
-import { PersonalInformationComponent } from './register/pages/personal-information/personal-information.component';
-import { FinancialInformationComponent } from './register/pages/financial-information/financial-information.component';
-import { StepsComponent } from './register/pages/steps/steps.component';
 
 const routes: Routes = [
   {
     path: '',
     component: DashboardComponent,
   },
-  { path: 'register', component: RegisterComponent },
-  {
-    path: 'steps',
-    component: StepsComponent,
-    children: [
-      { path: 'personal', component: PersonalInformationComponent },
-      { path: 'financial', component: FinancialInformationComponent },
-      // { path: 'complete', component: FinancialInformationComponent },
-    ],
-  },
+
   {
     path: 'new-transaction',
     component: AddTransactionComponent,

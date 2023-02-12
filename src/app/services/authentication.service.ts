@@ -26,7 +26,7 @@ export class AuthenticationService {
       () => {
         //send verificationMail
         //set userData
-        this.router.navigate(['steps/personal']);
+        this.router.navigate(['']);
       },
       (err) => {
         alert(err.message);
