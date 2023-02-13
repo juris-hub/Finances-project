@@ -1,0 +1,27 @@
+<div class="container">
+  <form class="form" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <h1 class="heading">Create your account</h1>
+    <div class="google-button">
+      <button pButton label="Sign in with google"></button>
+    </div>
+    <div class="email">
+      <label>Your email</label>
+      <input pInputText formControlName="email" />
+    </div>
+    <div class="password">
+      <label>Password</label>
+      <p-password type="password" formControlName="password"></p-password>
+    </div>
+    <div class="confirm-password">
+      <label>Confirm Password</label>
+      <p-password
+        [feedback]="false"
+        type="password"
+        formControlName="confirmPassword"
+      ></p-password>
+    </div>
+    <div class="submit">
+      <button type="submit" pButton label="Create an account"></button>
+    </div>
+  </form>
+</div>
