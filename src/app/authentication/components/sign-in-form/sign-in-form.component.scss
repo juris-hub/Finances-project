@@ -1,14 +1,16 @@
 .container{
   width: 640px;
-  height: 650px;
+  height: 450px;
   background-color: #141c24;
   border-radius: 10px;
 }
 
+
+
 .form{
   display: grid;
   grid-template-columns:  1em 1fr 1em;
-  grid-template-rows: 1em 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1em;
+  grid-template-rows: 1em 1fr 1fr 1fr 1fr 1fr 1em;
   justify-items: center;
 }
 
@@ -17,20 +19,12 @@
   grid-column: 2/3;
 }
 
-.google-button{
-  display: flex;
-  align-items: center;
-  grid-column: 2/3;
-  grid-row: 3/4;
-  justify-items: center;
-}
-
 .email{
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   grid-column: 2/3;
-  grid-row: 4/5;
+  grid-row: 3/4;
 
   input{
     width: 500px;
@@ -42,30 +36,22 @@
   flex-direction: column;
   justify-content: space-evenly;
   grid-column: 2/3;
-  grid-row: 5/6;
-}
-
-.confirm-password{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  grid-column: 2/3;
-  grid-row: 6/7;
+  grid-row: 4/5;
 }
 
 .submit{
   display: flex;
   align-items: center;
   grid-column: 2/3;
-  grid-row: 7/8
+  grid-row: 5/6
 }
 
-.sign-in{
+.sign-up{
   display: flex;
   align-items: center;
   justify-content: flex-start;
   grid-column: 2/3;
-  grid-row: 8/9;
+  grid-row: 6/7;
 
   a{
     text-decoration: underline;
@@ -75,14 +61,14 @@
   }
 }
 
-  :host ::ng-deep p-password input {
-    width: 500px;
-  }
+:host ::ng-deep p-password input {
+  width: 500px;
+}
 
-  :host ::ng-deep input {
-    background-color: #384454;
-  }
+:host ::ng-deep input {
+  background-color: #384454;
+}
 
- :host ::ng-deep .p-password-panel {
-    width: 200px
+:host ::ng-deep .p-password-panel {
+  width: 200px
 }

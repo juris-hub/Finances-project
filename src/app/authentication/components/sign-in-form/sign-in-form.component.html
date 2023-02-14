@@ -1,0 +1,24 @@
+<div class="container">
+  <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h1 class="heading">Sign in to your account</h1>
+    <div class="email">
+      <label>Your email</label>
+      <input pInputText formControlName="email" />
+    </div>
+    <div class="password">
+      <label>Password</label>
+      <p-password
+        [feedback]="false"
+        type="password"
+        formControlName="password"
+      ></p-password>
+    </div>
+    <div class="submit">
+      <button type="submit" pButton label="Create an account"></button>
+    </div>
+    <div class="sign-up">
+      <label>Don't have an account yet?&nbsp;</label>
+      <a (click)="onSignUp()">Sign up </a>
+    </div>
+  </form>
+</div>
