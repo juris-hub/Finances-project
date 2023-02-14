@@ -5,6 +5,8 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
   selector: 'app-register-form',
@@ -14,7 +16,11 @@ import {
 export class RegisterFormComponent implements OnInit {
   registerForm!: FormGroup;
 
-  constructor() {}
+  constructor(
+    private authenticationService: AuthenticationService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
     this.registerForm = new FormGroup({
@@ -48,6 +54,20 @@ export class RegisterFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.registerForm);
+    if (this.registerForm.valid) {
+      if (
+        this.registerForm.controls['email'].value &&
+        this.registerForm.controls['confirmPassword'].value
+      ) {
+        this.authenticationService.register(
+          this.registerForm.controls['email'].value,
+          this.registerForm.controls['confirmPassword'].value
+        );
+      }
+    }
+  }
+
+  onSignIn() {
+    this.router.navigate(['../sign-in'], { relativeTo: this.route });
   }
 }

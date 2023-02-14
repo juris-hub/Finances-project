@@ -8,7 +8,7 @@
 .form{
   display: grid;
   grid-template-columns:  1em 1fr 1em;
-  grid-template-rows: 1em 1fr 1fr 1fr 1fr 1fr 1fr 1em;
+  grid-template-rows: 1em 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1em;
   justify-items: center;
 }
 
@@ -58,6 +58,21 @@
   align-items: center;
   grid-column: 2/3;
   grid-row: 7/8
+}
+
+.sign-in{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  grid-column: 2/3;
+  grid-row: 8/9;
+
+  a{
+    text-decoration: underline;
+    color:#069;
+    cursor: pointer;
+
+  }
 }
 
   :host ::ng-deep p-password input {
