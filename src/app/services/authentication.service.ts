@@ -1,36 +1,20 @@
 import { Injectable } from '@angular/core';
+import { Auth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { from } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthenticationService {
-  constructor(private fireAuth: AngularFireAuth, private router: Router) {}
+  constructor(private auth: Auth) {}
 
   login(email: string, password: string) {
-    this.fireAuth.signInWithEmailAndPassword(email, password).then(
-      () => {
-        localStorage.setItem('token', 'true');
-        this.router.navigate(['']);
-      },
-      (err) => {
-        alert('Something went wrong');
-        this.router.navigate(['/register']);
-      }
-    );
+    return from(signInWithEmailAndPassword(this.auth, email, password));
   }
 
-  register(email: string, password: string) {
-    return this.fireAuth.createUserWithEmailAndPassword(email, password).then(
-      () => {
-        //send verificationMail
-        //set userData
-        this.router.navigate(['']);
-      },
-      (err) => {
-        alert(err.message);
-      }
-    );
+  logout() {
+    return from(this.auth.signOut());
   }
 }

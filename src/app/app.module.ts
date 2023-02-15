@@ -23,9 +23,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { StepsModule } from 'primeng/steps';
 import { PasswordModule } from 'primeng/password';
 import { DividerModule } from 'primeng/divider';
-import { AngularFireModule } from '@angular/fire/compat';
-import { environment } from './environments/environment';
+import { environment } from '../environments/environment';
 import { AuthenticationModule } from './authentication/authentication.module';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideDatabase, getDatabase } from '@angular/fire/database';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -54,8 +57,11 @@ import { AuthenticationModule } from './authentication/authentication.module';
     StepsModule,
     PasswordModule,
     DividerModule,
-    AngularFireModule.initializeApp(environment.firebase),
     AuthenticationModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase()),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [],
   bootstrap: [AppComponent],

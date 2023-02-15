@@ -55,16 +55,13 @@ export class RegisterFormComponent implements OnInit {
 
   onSubmit() {
     if (this.registerForm.valid) {
-      if (
-        this.registerForm.controls['email'].value &&
-        this.registerForm.controls['confirmPassword'].value
-      ) {
-        this.authenticationService.register(
-          this.registerForm.controls['email'].value,
-          this.registerForm.controls['confirmPassword'].value
-        );
-      }
+      return;
     }
+
+    // this.authenticationService.register(
+    //   this.registerForm.controls['email'].value,
+    //   this.registerForm.controls['confirmPassword'].value
+    // );
   }
 
   onSignIn() {
