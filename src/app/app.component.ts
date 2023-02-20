@@ -7,19 +7,19 @@ import { AuthenticationService } from './services/authentication.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
   title = 'Finances-project';
-  isAuthenticated = false;
   subscription: Subscription;
+
+  showHeader = false;
 
   constructor(private auth: AuthenticationService) {}
 
   ngOnInit(): void {
-    this.subscription = this.auth.isLoggedIn$.subscribe(() => {
-      console.log('logged in');
-      this.isAuthenticated = true;
+    this.auth.currentUser$.subscribe(() => {
+      this.showHeader = true;
     });
   }
 }

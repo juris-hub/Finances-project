@@ -29,6 +29,7 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { MenuModule } from 'primeng/menu';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
     ReactiveFormsModule,
     StepsModule,
     PasswordModule,
+    MenuModule,
     DividerModule,
     AuthenticationModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),

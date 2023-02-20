@@ -1,18 +1,13 @@
 <header>
   <button
+    *ngIf="user$ | async as user"
     pButton
     pRipple
     type="button"
-    icon="pi pi-home"
+    icon="pi pi-list"
     class="p-button-rounded p-button-text"
-    [routerLink]="['/']"
-  ></button>
-  <button
-    pButton
-    pRipple
-    type="button"
-    icon="pi pi-money-bill"
-    class="p-button-rounded p-button-text"
-    [routerLink]="['new-transaction']"
+    (click)="menu.toggle($event)"
   ></button>
 </header>
+
+<p-menu #menu [popup]="true" [model]="items"></p-menu>
