@@ -12,6 +12,7 @@ import { PasswordModule } from 'primeng/password';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SignInFormComponent } from './components/sign-in-form/sign-in-form.component';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
+import { AuthenticationService } from '../services/authentication.service';
 
 @NgModule({
   declarations: [

@@ -39,9 +39,6 @@ export class RegisterFormComponent implements OnInit {
         ),
       ]),
     });
-
-    const password = this.registerForm.controls['password'].value;
-    console.log(password);
   }
 
   matchPassword(control: FormControl): { [s: string]: boolean } {

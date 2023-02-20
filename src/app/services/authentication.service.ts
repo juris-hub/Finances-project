@@ -6,17 +6,23 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
-import { from, map } from 'rxjs';
+import { BehaviorSubject, from, map, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthenticationService {
-  constructor(private auth: Auth, private jwtHelper: JwtHelperService) {}
+  isLoggedIn$ = new Subject<boolean>();
+
+  constructor(
+    private auth: Auth,
+    private jwtHelper: JwtHelperService,
+    private router: Router
+  ) {}
 
   isAuthenticated(): boolean {
     const token = localStorage.getItem('token');
-    return this.jwtHelper.isTokenExpired(token);
+    return !this.jwtHelper.isTokenExpired(token);
   }
 
   register(email: string, password: string) {
@@ -28,6 +34,8 @@ export class AuthenticationService {
       map(async (user) => {
         if (user) {
           localStorage.setItem('token', await user.user.getIdToken());
+          this.isLoggedIn$.next(true);
+          this.router.navigate(['../']);
         }
         return user;
       })

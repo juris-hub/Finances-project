@@ -3,11 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddTransactionComponent } from './transactions/add-transaction/add-transaction.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { EditTransactionComponent } from './transactions/edit-transaction/edit-transaction.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: DashboardComponent,
+    canActivate: [AuthGuard],
   },
 
   {
