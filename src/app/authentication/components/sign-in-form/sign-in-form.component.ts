@@ -31,9 +31,7 @@ export class SignInFormComponent implements OnInit {
 
     const { email, password } = this.loginForm.value;
 
-    this.authenticationService.login(email, password).subscribe(() => {
-      this.router.navigate(['../'], { relativeTo: this.route });
-    });
+    this.authenticationService.login(email, password).subscribe();
   }
 
   onSignUp() {
