@@ -55,12 +55,12 @@ export class RegisterFormComponent implements OnInit {
       return;
     }
 
-    this.authenticationService.register(
-      this.registerForm.controls['email'].value,
-      this.registerForm.controls['confirmPassword'].value
-    );
-
-    this.router.navigate(['../'], { relativeTo: this.route });
+    this.authenticationService
+      .register(
+        this.registerForm.controls['email'].value,
+        this.registerForm.controls['confirmPassword'].value
+      )
+      .subscribe();
   }
 
   onSignIn() {
