@@ -30,6 +30,7 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { MenuModule } from 'primeng/menu';
+import { UserOnboardingModule } from './user-onboarding/user-onboarding.module';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { MenuModule } from 'primeng/menu';
     MenuModule,
     DividerModule,
     AuthenticationModule,
+    UserOnboardingModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),

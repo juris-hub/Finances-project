@@ -20,6 +20,13 @@ const routes: Routes = [
       ),
   },
   {
+    path: 'user-onboarding',
+    loadChildren: () =>
+      import('./user-onboarding/user-onboarding.module').then(
+        (m) => m.UserOnboardingModule
+      ),
+  },
+  {
     path: 'new-transaction',
     component: AddTransactionComponent,
   },
