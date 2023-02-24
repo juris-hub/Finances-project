@@ -16,12 +16,5 @@ export class SectionOneComponent implements OnInit {
 
   constructor(private userService: UserService) {}
 
-  ngOnInit(): void {
-    this.userData = {
-      name: this.userService.getProfileInformation().name,
-      lastName: this.userService.getProfileInformation().lastName,
-      netWorth: this.userService.getFinancialInformation().netWorth,
-      monthlyIncome: this.userService.getFinancialInformation().income,
-    };
-  }
+  ngOnInit(): void {}
 }

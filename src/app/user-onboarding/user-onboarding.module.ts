@@ -10,6 +10,7 @@ import { FinancialInfoFormComponent } from './components/financial-info-form/fin
 import { PersonalInfoFormComponent } from './components/personal-info-form/personal-info-form.component';
 import { CalendarModule } from 'primeng/calendar';
 import { InputTextModule } from 'primeng/inputtext';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { InputTextModule } from 'primeng/inputtext';
     UserOnboardingRoutingModule,
     StepsModule,
     InputTextModule,
+    ReactiveFormsModule,
   ],
 })
 export class UserOnboardingModule {}

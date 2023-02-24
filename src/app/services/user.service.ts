@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { FinancialInformation } from '../core/financialInformation.model';
-import { ProfileInformation } from '../core/profileInformation.model';
+import { PersonalInformation } from '../core/personalInformation.model';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { User } from '../core/user.model';
 
@@ -10,7 +10,7 @@ import { User } from '../core/user.model';
 export class UserService {
   user!: User;
   financialInformation!: FinancialInformation;
-  profileInformation!: ProfileInformation;
+  profileInformation!: PersonalInformation;
 
   constructor() {}
 
