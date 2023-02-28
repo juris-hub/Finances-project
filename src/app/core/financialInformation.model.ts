@@ -1,9 +1,4 @@
-export class FinancialInformation {
-  income: number;
+export interface FinancialInformation {
+  monthlyIncome: number;
   netWorth: number;
-
-  constructor(income: number, netWorth: number) {
-    this.income = income;
-    this.netWorth = netWorth;
-  }
 }

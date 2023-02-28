@@ -11,6 +11,7 @@ import { PersonalInfoFormComponent } from './components/personal-info-form/perso
 import { CalendarModule } from 'primeng/calendar';
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InputNumberModule } from 'primeng/inputnumber';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     UserOnboardingRoutingModule,
     StepsModule,
     InputTextModule,
+    InputNumberModule,
     ReactiveFormsModule,
   ],
 })

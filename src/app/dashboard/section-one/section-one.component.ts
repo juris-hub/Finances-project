@@ -7,14 +7,9 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./section-one.component.scss'],
 })
 export class SectionOneComponent implements OnInit {
-  userData!: {
-    name: string;
-    lastName: string;
-    netWorth: number;
-    monthlyIncome: number;
-  };
-
   constructor(private userService: UserService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.userService.getProfileInformation());
+  }
 }

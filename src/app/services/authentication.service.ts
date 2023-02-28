@@ -38,11 +38,6 @@ export class AuthenticationService {
       map(async (user) => {
         if (user) {
           localStorage.setItem('token', await user.user.getIdToken());
-          const docRef = await addDoc(collection(this.db, 'users'), {
-            uid: await user.user.getIdToken(),
-            email: email,
-          });
-          console.log(docRef);
           this.router.navigate(['../']);
         }
         return user;
@@ -66,6 +61,4 @@ export class AuthenticationService {
     localStorage.removeItem('token');
     return from(this.auth.signOut());
   }
-
-  onCreateUserData(userData: User) {}
 }

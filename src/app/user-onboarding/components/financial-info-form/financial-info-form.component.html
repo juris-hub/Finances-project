@@ -1,1 +1,37 @@
-<p>financial-info-form works!</p>
+<div class="container">
+  <form [formGroup]="financialInfoForm" (ngSubmit)="onSubmit()">
+    <h1>Your financial status</h1>
+    <div class="form-row">
+      <div class="form-label">Monthly Income</div>
+      <div class="form-item">
+        <p-inputNumber
+          formControlName="monthlyIncome"
+          mode="currency"
+          currency="EUR"
+          [minFractionDigits]="2"
+        ></p-inputNumber>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Net Worth</div>
+      <div class="form-item">
+        <p-inputNumber
+          formControlName="netWorth"
+          mode="currency"
+          [minFractionDigits]="2"
+          currency="EUR"
+        ></p-inputNumber>
+      </div>
+    </div>
+    <div class="form-row-actions">
+      <div class="submit">
+        <button
+          type="submit"
+          pButton
+          label="Complete"
+          [disabled]="!financialInfoForm.valid"
+        ></button>
+      </div>
+    </div>
+  </form>
+</div>
