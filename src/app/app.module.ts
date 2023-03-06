@@ -30,6 +30,7 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { MenuModule } from 'primeng/menu';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { UserOnboardingModule } from './user-onboarding/user-onboarding.module';
 
 @NgModule({

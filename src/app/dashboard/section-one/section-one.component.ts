@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { from, Subscription } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -7,9 +8,13 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./section-one.component.scss'],
 })
 export class SectionOneComponent implements OnInit {
+  userDataSubscription: Subscription;
+
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    console.log(this.userService.getProfileInformation());
+    // this.userService.getProfileInformation().then((data) => {
+    //   console.log(data);
+    // });
   }
 }
