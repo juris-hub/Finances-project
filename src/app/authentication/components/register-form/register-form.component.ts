@@ -6,8 +6,11 @@ import {
   Validators,
 } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UntilDestroy } from '@ngneat/until-destroy';
+import { Subscription } from 'rxjs';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 
+@UntilDestroy({ checkProperties: true })
 @Component({
   selector: 'app-register-form',
   templateUrl: './register-form.component.html',
@@ -15,6 +18,8 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 })
 export class RegisterFormComponent implements OnInit {
   registerForm!: FormGroup;
+
+  subscription: Subscription;
 
   constructor(
     private authenticationService: AuthenticationService,
@@ -55,7 +60,7 @@ export class RegisterFormComponent implements OnInit {
       return;
     }
 
-    this.authenticationService
+    this.subscription = this.authenticationService
       .register(
         this.registerForm.controls['email'].value,
         this.registerForm.controls['confirmPassword'].value

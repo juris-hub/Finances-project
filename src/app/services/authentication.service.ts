@@ -7,9 +7,8 @@ import {
   signInWithEmailAndPassword,
 } from 'firebase/auth';
 import { from, map } from 'rxjs';
-import { User } from '../core/user.model';
-import { Firestore, FirestoreModule } from '@angular/fire/firestore';
-import { addDoc, collection } from 'firebase/firestore';
+import { Firestore } from '@angular/fire/firestore';
+import { doc, getDoc } from 'firebase/firestore';
 
 @Injectable({
   providedIn: 'root',
@@ -38,7 +37,14 @@ export class AuthenticationService {
       map(async (user) => {
         if (user) {
           localStorage.setItem('token', await user.user.getIdToken());
-          this.router.navigate(['../']);
+          const userRef = doc(this.db, 'Users', this.auth.currentUser.uid);
+          const userSnap = await getDoc(userRef);
+
+          if (userSnap.exists()) {
+            this.router.navigate(['/']);
+          } else {
+            this.router.navigate(['/user-onboarding/personal']);
+          }
         }
         return user;
       })

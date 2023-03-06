@@ -29,5 +29,6 @@ export class FinancialInfoFormComponent {
     this.userService.addFinancialInfromation(financialInfo);
 
     this.userService.addUser();
+    this.router.navigate(['/']);
   }
 }

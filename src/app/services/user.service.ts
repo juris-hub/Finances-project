@@ -20,11 +20,7 @@ export class UserService {
   financialInformation: FinancialInformation = null;
   profileInformation: PersonalInformation = null;
 
-  constructor(
-    private db: Firestore,
-    private auth: Auth,
-    private angularFireAuth: AngularFireAuth
-  ) {}
+  constructor(private db: Firestore, private auth: Auth) {}
 
   addProfileInformation(personalInfo: PersonalInformation) {
     this.profileInformation = personalInfo;
@@ -40,9 +36,9 @@ export class UserService {
       financialInformation: this.financialInformation,
     });
   }
-  //shouldn't use JWT token as UID
+
   async getProfileInformation() {
-    const docRef = doc(this.db, 'Users', this.uid);
+    const docRef = doc(this.db, 'Users', this.auth.currentUser.uid);
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {

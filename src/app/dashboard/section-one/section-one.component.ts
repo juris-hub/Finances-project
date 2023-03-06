@@ -13,8 +13,6 @@ export class SectionOneComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    // this.userService.getProfileInformation().then((data) => {
-    //   console.log(data);
-    // });
+    from(this.userService.getProfileInformation()).subscribe(console.log);
   }
 }
