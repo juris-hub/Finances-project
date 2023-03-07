@@ -1,19 +1,15 @@
 <h3>User information</h3>
-<div class="container">
+<div class="container" *ngIf="userInfo$ | async as userInfo">
   <div class="row">
-    <p>Name :</p>
-    <!-- <span>{{ userData.name }}</span>
+    <span>Name : {{ userInfo.profileInformation.firstName }}</span>
   </div>
   <div class="row">
-    <p>Last Name :</p>
-    <span>{{ userData.lastName }}</span>
+    <span>Last Name : {{ userInfo.profileInformation.lastName }}</span>
   </div>
   <div class="row">
-    <p>Monthly income :</p>
-    <span>{{ userData.monthlyIncome }}</span>
+    <span>Income : {{ userInfo.financialInformation.monthlyIncome }}€</span>
   </div>
   <div class="row">
-    <p>Net Worth :</p>
-    <span>{{ userData.netWorth }}</span> -->
+    <span>Net worth : {{ userInfo.financialInformation.netWorth }}€</span>
   </div>
 </div>

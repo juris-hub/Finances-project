@@ -31,14 +31,14 @@ export class UserService {
   }
 
   addUser() {
-    setDoc(doc(this.db, 'Users', this.auth.currentUser.uid), {
+    setDoc(doc(this.db, 'Users', this.auth?.currentUser?.uid), {
       profileInformation: this.profileInformation,
       financialInformation: this.financialInformation,
     });
   }
 
-  async getProfileInformation() {
-    const docRef = doc(this.db, 'Users', this.auth.currentUser.uid);
+  async getUserInfo() {
+    const docRef = doc(this.db, 'Users', localStorage.getItem('user'));
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
@@ -48,9 +48,5 @@ export class UserService {
       console.log('No such document!');
       return null;
     }
-  }
-
-  getFinancialInformation() {
-    return this.financialInformation;
   }
 }

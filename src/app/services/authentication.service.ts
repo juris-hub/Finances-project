@@ -56,6 +56,7 @@ export class AuthenticationService {
       map(async (user) => {
         if (user) {
           localStorage.setItem('token', await user.user.getIdToken());
+          localStorage.setItem('user', this.auth.currentUser.uid);
           this.router.navigate(['../']);
         }
         return user;
@@ -65,6 +66,7 @@ export class AuthenticationService {
 
   logout() {
     localStorage.removeItem('token');
+    localStorage.removeItem('user');
     return from(this.auth.signOut());
   }
 }

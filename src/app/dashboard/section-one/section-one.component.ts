@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { from, Subscription } from 'rxjs';
+import { from, Observable, Subscription } from 'rxjs';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -8,11 +8,11 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./section-one.component.scss'],
 })
 export class SectionOneComponent implements OnInit {
-  userDataSubscription: Subscription;
+  userInfo$: Observable<any>;
 
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    from(this.userService.getProfileInformation()).subscribe(console.log);
+    this.userInfo$ = from(this.userService.getUserInfo());
   }
 }
