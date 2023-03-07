@@ -1,6 +1,5 @@
 import { FinancialInformation } from './financialInformation.model';
 import { PersonalInformation } from './personalInformation.model';
-import { Transactions } from './transactions.model';
 
 export interface User {
   uid: string;

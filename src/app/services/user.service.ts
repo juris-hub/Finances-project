@@ -1,14 +1,11 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { FinancialInformation } from '../core/financialInformation.model';
 import { PersonalInformation } from '../core/personalInformation.model';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { User } from '../core/user.model';
-import { AuthenticationService } from './authentication.service';
 import { doc, Firestore, setDoc } from '@angular/fire/firestore';
-import { collection, getDoc, runTransaction } from 'firebase/firestore';
-import { Auth, authState } from '@angular/fire/auth';
+import { getDoc } from 'firebase/firestore';
+import { Auth } from '@angular/fire/auth';
 import { UntilDestroy } from '@ngneat/until-destroy';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @UntilDestroy({ checkProperties: true })
 @Injectable({

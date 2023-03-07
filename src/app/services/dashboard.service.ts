@@ -1,23 +1,22 @@
 import { Injectable } from '@angular/core';
-import { Transactions } from '../core/transactions.model';
+import { Firestore } from '@angular/fire/firestore';
+import { doc, setDoc } from 'firebase/firestore';
+import { Transaction } from '../core/transaction.model';
 import { User } from '../core/user.model';
-import { UserService } from './user.service';
+import { Auth } from '@angular/fire/auth';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DashboardService {
-  transactions: Transactions[] = [
-    new Transactions('Ćevapi', new Date('12.01.2023'), 3, 'rana', 1),
-    new Transactions('Kod kiće', new Date('12.01.2023'), 0.6, 'izlazak', 2),
-  ];
-
   user!: User;
 
-  constructor(private userService: UserService) {}
+  constructor(private db: Firestore, private auth: Auth) {}
 
-  getTransactions() {
-    return this.transactions.slice();
+  addTransaction(transaction: Transaction) {
+    setDoc(doc(this.db, 'Transactions', this.auth?.currentUser?.uid), {
+      transaction: transaction,
+    });
   }
 
   getUserData() {}
