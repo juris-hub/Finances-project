@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HeaderComponent } from './header/header.component';
-import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
+import { NavigationBarComponent } from './dashboard/navigation-bar/navigation-bar.component';
 import { SectionOneComponent } from './dashboard/section-one/section-one.component';
 import { SectionTwoComponent } from './dashboard/section-two/section-two.component';
 import { SectionThreeComponent } from './dashboard/section-three/section-three.component';
@@ -13,8 +13,6 @@ import { ButtonModule } from 'primeng/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainComponent } from './dashboard/main/main.component';
 import { TableModule } from 'primeng/table';
-import { AddTransactionComponent } from './transactions/add-transaction/add-transaction.component';
-import { EditTransactionComponent } from './transactions/edit-transaction/edit-transaction.component';
 import { CalendarModule } from 'primeng/calendar';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputNumberModule } from 'primeng/inputnumber';
@@ -30,7 +28,6 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { MenuModule } from 'primeng/menu';
-import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { UserOnboardingModule } from './user-onboarding/user-onboarding.module';
 
 @NgModule({
@@ -43,8 +40,6 @@ import { UserOnboardingModule } from './user-onboarding/user-onboarding.module';
     SectionTwoComponent,
     SectionThreeComponent,
     MainComponent,
-    AddTransactionComponent,
-    EditTransactionComponent,
   ],
   imports: [
     BrowserModule,

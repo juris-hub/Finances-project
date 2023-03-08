@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddTransactionComponent } from './transactions/add-transaction/add-transaction.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { EditTransactionComponent } from './transactions/edit-transaction/edit-transaction.component';
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
@@ -26,13 +24,14 @@ const routes: Routes = [
         (m) => m.UserOnboardingModule
       ),
   },
-  {
-    path: 'new-transaction',
-    component: AddTransactionComponent,
-  },
 
-  // { path: ':id', component: RecipeEditComponent },
-  { path: ':id/edit', component: EditTransactionComponent },
+  {
+    path: 'transactions',
+    loadChildren: () =>
+      import('./transactions/transactions.module').then(
+        (m) => m.TransactionsModule
+      ),
+  },
 ];
 
 @NgModule({

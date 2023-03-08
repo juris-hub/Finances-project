@@ -1,0 +1,47 @@
+<div class="container">
+  <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+    <h1>Add transaction</h1>
+    <div class="form-row">
+      <div class="form-label">Name of the transaction:</div>
+      <div class="form-item">
+        <input pInputText formControlName="transactionName" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Transaction Date:</div>
+      <div class="form-item">
+        <p-calendar formControlName="transactionDate"></p-calendar>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Cost of the transaction:</div>
+      <div class="form-item">
+        <p-inputNumber
+          formControlName="transactionCost"
+          mode="currency"
+          currency="EUR"
+          [minFractionDigits]="2"
+        ></p-inputNumber>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">Category:</div>
+      <div class="form-item">
+        <p-dropdown
+          formControlName="transactionCategory"
+          [options]="categories"
+        ></p-dropdown>
+      </div>
+    </div>
+    <div class="form-row-actions">
+      <div class="submit">
+        <button
+          type="submit"
+          pButton
+          label="Add transaction"
+          [disabled]="!transactionForm.valid"
+        ></button>
+      </div>
+    </div>
+  </form>
+</div>

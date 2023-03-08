@@ -1,0 +1,54 @@
+.container{
+  width: 640px;
+  background-color: #141c24;
+  border-radius: 10px;
+  padding: 10px
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+  gap: 1em;
+  min-height: 2.5em;
+  margin-bottom: 1em;
+}
+
+.form-label {
+  width: 14em;
+  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  &.form-label-top {
+    align-self: flex-start;
+    padding-top: 0.5em;
+  }
+}
+
+.form-row-actions{
+  display: flex;
+  gap: 1em;
+  min-height: 2.5em;
+  margin-bottom: 1em;
+  justify-content: flex-end;
+}
+
+.form-item{
+  width: 22em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  ::ng-deep.p-calendar,::ng-deep.p-dropdown,::ng-deep.p-inputnumber-input{
+    width: 22em;
+
+  }
+
+
+
+}
