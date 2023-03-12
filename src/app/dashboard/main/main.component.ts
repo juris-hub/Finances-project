@@ -8,9 +8,8 @@ import { Transaction } from 'src/app/core/transaction.model';
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent implements OnInit {
-  transactions: Transaction[] = [];
 
-  constructor(private dashboardService: DashboardService) {}
+  constructor() {}
 
   ngOnInit(): void {}
 }

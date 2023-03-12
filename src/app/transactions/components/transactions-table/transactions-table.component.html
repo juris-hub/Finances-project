@@ -1,0 +1,30 @@
+<p-table [value]="transactions">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Name</th>
+      <th>Timestamp</th>
+      <th>Amount</th>
+      <th>Category</th>
+      <th>Edit</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-transaction>
+    <tr>
+      <td>{{ transaction.name }}</td>
+      <td>{{ transaction.timestamp | date : "dd/MM/yyyy" }}</td>
+      <td>{{ transaction.amount }}</td>
+      <td>{{ transaction.category }}</td>
+      <td>
+        <span class="p-buttonset">
+          <button
+            [routerLink]="[transaction.id + '/edit']"
+            pButton
+            pRipple
+            icon="pi pi-user-edit"
+          ></button>
+          <button pButton pRipple icon="pi pi-trash"></button
+        ></span>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

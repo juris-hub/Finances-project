@@ -10,12 +10,15 @@ import { InputTextModule } from 'primeng/inputtext';
 import { CalendarModule } from 'primeng/calendar';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { DropdownModule } from 'primeng/dropdown';
+import { TransactionsTableComponent } from './components/transactions-table/transactions-table.component';
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   declarations: [
     TransactionsComponent,
     AddTransactionComponent,
     AddTransactionFormComponent,
+    TransactionsTableComponent,
   ],
   imports: [
     CommonModule,
@@ -25,6 +28,7 @@ import { DropdownModule } from 'primeng/dropdown';
     InputNumberModule,
     CalendarModule,
     DropdownModule,
+    TableModule
   ],
 })
 export class TransactionsModule {}

@@ -5,7 +5,6 @@ import { User } from '../core/user.model';
   providedIn: 'root',
 })
 export class DashboardService {
-  user!: User;
 
   constructor() {}
 
