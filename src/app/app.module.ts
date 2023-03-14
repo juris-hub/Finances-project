@@ -29,6 +29,7 @@ import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { MenuModule } from 'primeng/menu';
 import { UserOnboardingModule } from './user-onboarding/user-onboarding.module';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 
 @NgModule({
   declarations: [
@@ -63,7 +64,7 @@ import { UserOnboardingModule } from './user-onboarding/user-onboarding.module';
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
   ],
-  providers: [],
+  providers: [{ provide: FIREBASE_OPTIONS, useValue: environment.firebase }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

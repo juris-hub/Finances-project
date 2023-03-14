@@ -1,7 +1,7 @@
 export interface Transaction {
-  name: string;
-  timestamp: Date;
-  amount: number;
-  category: string;
+  transactionName: string;
+  transactionDate: Date;
+  transactionCost: number | null;
+  transactionCategory: string;
   id: number;
 }

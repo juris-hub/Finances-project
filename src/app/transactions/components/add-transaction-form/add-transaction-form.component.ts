@@ -16,6 +16,7 @@ export class AddTransactionFormComponent {
     transactionDate: [new Date(), [Validators.required]],
     transactionCost: [null, [Validators.required]],
     transactionCategory: [this.categories[0], [Validators.required]],
+    id: [0],
   });
 
   constructor(
@@ -26,7 +27,16 @@ export class AddTransactionFormComponent {
   ngOnInit(): void {}
 
   onSubmit() {
+    const transaction = {
+      transactionName: this.transactionForm.controls['transactionName'].value,
+      transactionDate: this.transactionForm.controls['transactionDate'].value,
+      transactionCost: this.transactionForm.controls['transactionCost'].value,
+      transactionCategory:
+        this.transactionForm.controls['transactionCategory'].value,
+      id: this.transactionForm.controls['id'].value,
+    };
     if (this.transactionForm.valid) {
+      this.transactionService.addTransaction(transaction);
     }
   }
 }

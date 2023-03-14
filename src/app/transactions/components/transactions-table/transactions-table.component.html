@@ -1,4 +1,4 @@
-<p-table [value]="transactions">
+<p-table [value]="transactions$ | async">
   <ng-template pTemplate="header">
     <tr>
       <th>Name</th>
@@ -10,10 +10,14 @@
   </ng-template>
   <ng-template pTemplate="body" let-transaction>
     <tr>
-      <td>{{ transaction.name }}</td>
-      <td>{{ transaction.timestamp | date : "dd/MM/yyyy" }}</td>
-      <td>{{ transaction.amount }}</td>
-      <td>{{ transaction.category }}</td>
+      <td>{{ transaction.transactionName }}</td>
+      <td>
+        {{
+          transaction.transactionDate.toDate() | date : "dd/MM/yyyy hh:mm:ss"
+        }}
+      </td>
+      <td>{{ transaction.transactionCost }}</td>
+      <td>{{ transaction.transactionCategory }}</td>
       <td>
         <span class="p-buttonset">
           <button
